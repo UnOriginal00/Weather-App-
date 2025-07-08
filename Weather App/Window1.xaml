@@ -1,0 +1,86 @@
+﻿<Window x:Class="Weather_App.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Weather_App"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800"
+        Background="Aqua">
+    <!-- Overall grid container -->
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+
+        <!--Main Centre Grid-->
+
+        <Border Grid.Column="1" 
+            Grid.Row="1"
+            Background="White"/>
+
+        <!--Name and Location grid Row-->
+
+        <Grid Grid.Row="1" Grid.Column="1" >
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--Input Name-->
+            <TextBlock Text="Please Input Your Preffered name:" 
+                   Grid.Row="0"/>
+
+            <TextBox x:Name="userNameInput"
+                 Margin="0,5,0,0"
+                 Height="20"
+                 Background="Gray"/>
+
+            <Button x:Name="userNameInputSave"
+                Content="Save"
+                Width="50"
+                Height="20"
+                Margin="0,70,0,0"
+                Click="userNameInputOneSave_Click"/>
+
+            <!--Input Validation-->
+            <TextBlock x:Name="invalidInputException"
+                   Height="20"
+                   Text="Invalid Input: Please input a valid name" 
+                   Foreground="White"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,40"/>
+
+            <!--Input Location-->
+            <TextBlock Text="Please Input Your location"
+                   Grid.Row="1"/>
+
+            <TextBox x:Name="userLocationInput"
+                 Grid.Row="1"
+                 Margin="0,5,0,0"
+                 Height="20"
+                 Background="Gray"/>
+
+            <Button x:Name="userLocationInputSave"
+                Grid.Row="1"
+                Content="Save"
+                Width="50"
+                Height="20"
+                Margin="0,70,0,0"/>
+
+        </Grid>
+
+    </Grid>
+
+</Window>
