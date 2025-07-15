@@ -19,6 +19,7 @@ namespace Weather_App
         public MainWindow()
         {
             InitializeComponent();
+            ApiHelper.inizialiseClient();
         }
     }
 }

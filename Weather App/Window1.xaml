@@ -52,7 +52,7 @@
                 Width="50"
                 Height="20"
                 Margin="0,70,0,0"
-                Click="userNameInputOneSave_Click"/>
+                Click="userNameInputSave_Click"/>
 
             <!--Input Validation-->
             <TextBlock x:Name="invalidInputException"
@@ -63,21 +63,26 @@
                    Margin="0,0,0,40"/>
 
             <!--Input Location-->
-            <TextBlock Text="Please Input Your location"
+            <TextBlock Text="Please Input Your location:"
                    Grid.Row="1"/>
 
-            <TextBox x:Name="userLocationInput"
+            <Button x:Name="userLocationInput"
                  Grid.Row="1"
                  Margin="0,5,0,0"
                  Height="20"
-                 Background="Gray"/>
+                 Background="Gray"
+                 Content="Click Here."/>
+
+
+
 
             <Button x:Name="userLocationInputSave"
                 Grid.Row="1"
                 Content="Save"
                 Width="50"
                 Height="20"
-                Margin="0,70,0,0"/>
+                Margin="0,70,0,0"
+                Click="userLocationInputSave_Click"/>
 
         </Grid>
 

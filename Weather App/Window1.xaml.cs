@@ -17,14 +17,25 @@ namespace Weather_App
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
+    /// AIzaSyC2wy16rPLNeCuaKcMXVKDxivMl353AAYI
     public partial class Window1 : Window
     {
+
         public Window1()
         {
             InitializeComponent();
+            ApiHelper.inizialiseClient();
         }
 
-        private void userNameInputOneSave_Click(object sender, RoutedEventArgs e)
+        string userName;
+
+        private void preventInteraction(UIElement uIElement) 
+        {
+            uIElement.IsEnabled = false;
+        }
+
+
+        private void userNameInputSave_Click(object sender, RoutedEventArgs e)
         {
 
 
@@ -37,11 +48,20 @@ namespace Weather_App
             else
             {
                 invalidInputException.Foreground = Brushes.White;
-                string userName = userNameInput.Text;
+                userName = userNameInput.Text;
+                preventInteraction(userNameInput);
                 userNameInputSave.Content = "Saved!";
-                userNameInputSave.Focus();
             }
 
         }
+
+        private void userLocationInputSave_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            userLocationInputSave.Content = "Saved!";
+
+        }
+
     }
 }
