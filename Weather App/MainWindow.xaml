@@ -68,14 +68,14 @@
                 </StackPanel.Resources>
                 
                 <TextBlock x:Name="tempretureDisplay"
-                       Text="Current Tempreture:"/>
+                       Text=" Current Tempreture:"/>
                 <TextBlock x:Name="humidityDisplay"
-                       Text="Humidity:"/>
+                       Text=" Humidity:"/>
 
             </StackPanel>
 
 
-
+            
 
             <!--Bottom of Left Section-->
             <TextBlock Grid.Row="1" 
