@@ -20,8 +20,9 @@ namespace Weather_App
         {
             InitializeComponent();
             ApiHelper.inizialiseClient();
+            greetUserText.Text = $"Greetings , {UserNameInfo.UserName}";
         }
 
-        public string userName;
+        
     }
 }

@@ -10,54 +10,195 @@
 
         <Grid.ColumnDefinitions>
 
+            <!--Window Margin-->
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="30*"/>
             <ColumnDefinition Width="70*"/>
+            <!--Window Margin-->
             <ColumnDefinition Width="20"/>
 
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-
+            <!--Window Margin-->
             <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
+            <!--Window Margin-->
             <RowDefinition Height="20"/>
 
         </Grid.RowDefinitions>
 
 
+        <!--Overall Background for right side-->
         <Border Grid.Column="1" Grid.Row="1"
-            Background="Blue"/>
+            Background="LightBlue"/>
 
+        <!--Overall Background for the left side-->
         <Border Grid.Column="2"
             Grid.Row="1"
             Background="Aqua"
             />
 
 
+        <!--Nested Grid Rows for Left Side-->
         <Grid  Grid.Column="1" Grid.Row="1">
 
             <Grid.RowDefinitions>
 
-
+                
                 <RowDefinition Height="45*"/>
                 <RowDefinition Height="55*"/>
 
             </Grid.RowDefinitions>
-
+            
+            <!--Top of Left Section-->
+            <!--Colour for Top of Left Section-->
             <Border Grid.Row="0" 
                     BorderBrush="Black"
-                    BorderThickness="1"/>
+                    BorderThickness="1"
+                    Background="White"/>
+
+            <StackPanel>
+
+                <StackPanel.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="FontSize" Value="20"/>
+                    </Style>
+                    
+                </StackPanel.Resources>
+                
+                <TextBlock x:Name="tempretureDisplay"
+                       Text="Current Tempreture:"/>
+                <TextBlock x:Name="humidityDisplay"
+                       Text="Humidity:"/>
+
+            </StackPanel>
 
 
 
-            <TextBlock Grid.Row="1" Text="Summary"/>
 
+            <!--Bottom of Left Section-->
+            <TextBlock Grid.Row="1" 
+                       Text="Summary:"
+                       FontSize="30"/>
 
         </Grid>
 
+        <!--Nested Grid Rows for the right side-->
+        <Grid Grid.Column="2" Grid.Row="1">
+
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="95"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+
+            </Grid.RowDefinitions>
+            
+            <!--Nested Grid Coloumb for top of Dashboard -->
+            <Grid Grid.Row="0">
+
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="40"/>
+
+                </Grid.ColumnDefinitions>
+
+                <TextBlock x:Name="greetUserText"
+                           Text="Greetings , [User]"
+                           HorizontalAlignment="Center"
+                           FontSize="30"/>
+                <TextBlock Text="Here are your suggestions for today."
+                           HorizontalAlignment="Center"
+                           FontSize="15"
+                           Margin="0,50,0,0"/>
+
+                <Button Grid.Column="1"
+                        Height="20"
+                        Margin="0,0,0,30"/>
+
+            </Grid>
+           
+            
+            <!--Nested Grid Columbs for centre of Dashboard-->
+            <Grid Grid.Row="1">
+
+                <Grid.ColumnDefinitions>
+                    
+                    <!--Everything else is margin for panels-->
+                    <ColumnDefinition Width="40"/>
+                    <!--Activities Panel-->
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="40"/>
+                    <!--Clothing Panel-->
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="40"/>
+
+                </Grid.ColumnDefinitions>
+
+                
+                <!--Panels Background-->
+                <Border Background="White" Grid.Column="1"/>
+                <Border Background="White" Grid.Column="3"/>
+                
+                <!--Acitvites Panel with Recommendation in Stack Panel-->
+                <StackPanel Grid.Column="1">
+                    
+                    <StackPanel.Resources>
+                        <!--Styles for the Recommendations in Stack Panels-->
+                        <Style TargetType="Button">
+                            <Setter Property="Margin" Value="0,36,0,0"/>
+                            <Setter Property="Height" Value="25"/>
+                        </Style>
+                        <!--Styles for Sub heading text-->
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                            <Setter Property="FontSize" Value="25"/>
+                            <Setter Property="Padding" Value="20,0"/>
+                        </Style>
+                    </StackPanel.Resources>
 
 
+                    <TextBlock Text="Activites"/>
+
+                    <Button/>
+                    <Button/>
+                    <Button/>
+
+                    
+
+                </StackPanel>
+                <!--Clothing Panel with buttons in Stack Panel-->
+                <StackPanel Grid.Column="3">
+
+                    <StackPanel.Resources>
+                        <!--Styles for the Recommendation in Stack Panels-->
+                        <Style TargetType="Button">
+                            <Setter Property="Margin" Value="0,36,0,0"/>
+                            <Setter Property="Height" Value="25"/>
+                        </Style>
+                        <!--Styles for Sub heading text-->
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                            <Setter Property="FontSize" Value="25"/>
+                            <Setter Property="Padding" Value="20,0"/>
+                        </Style>
+                    </StackPanel.Resources>
+
+                    <TextBlock Text="Clothing"/>
+                    
+                    <!--Activities Recomendation-->
+                    <Button/>
+                    <Button/>
+                    <Button/>
+
+                </StackPanel>
+
+            </Grid>
+
+
+        </Grid>
 
     </Grid>
 
