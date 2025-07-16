@@ -29,9 +29,7 @@ namespace Weather_App
 
         readonly GetLocationApi getLocationApi = new GetLocationApi();
 
-        string userName;
-
-        private void preventInteraction(UIElement uIElement) 
+        private void preventInteraction(UIElement uIElement)
         {
             uIElement.IsEnabled = false;
         }
@@ -50,10 +48,12 @@ namespace Weather_App
             else
             {
                 invalidInputException.Foreground = Brushes.White;
-                userName = userNameInput.Text;
+                UserNameInfo.UserName = userNameInput.Text;
                 preventInteraction(userNameInput);
                 userNameInputSave.Content = "Saved!";
             }
+
+            moveToMainWindow();
 
         }
 
@@ -62,15 +62,29 @@ namespace Weather_App
 
             preventInteraction(userLocationInput);
             userLocationInputSave.Content = "Saved!";
+            moveToMainWindow();
 
         }
 
         public async void userLocationInput_Click(object sender, RoutedEventArgs e)
         {
-            
+
             LocationModel locationModel = await getLocationApi.getLocation();
+            Location.Latitude = locationModel.latitude;
+            Location.Longitude = locationModel.longitude;
             userLocationInput.Content = $"Lat: {locationModel.latitude}, Lng: {locationModel.longitude}";
 
         }
+
+        public void moveToMainWindow()
+        {
+            if (userLocationInput.IsEnabled == false && userNameInput.IsEnabled == false)
+            {
+                var mainWindow = new MainWindow(); // Or whatever your next window class is
+                mainWindow.Show();
+                this.Close(); // Close current window if you wa
+            }
+        }
+
     }
 }

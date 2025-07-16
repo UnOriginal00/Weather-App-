@@ -8,7 +8,6 @@ using System.Net.Http.Headers;
  
 namespace Weather_App
 {
-    //AIzaSyC2wy16rPLNeCuaKcMXVKDxivMl353AAYI
     public  class ApiHelper
     {
 

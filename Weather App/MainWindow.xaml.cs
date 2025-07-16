@@ -21,5 +21,7 @@ namespace Weather_App
             InitializeComponent();
             ApiHelper.inizialiseClient();
         }
+
+        public string userName;
     }
 }

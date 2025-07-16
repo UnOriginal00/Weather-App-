@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Weather App": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "IP_GEOLOCATION_API_KEY": "0ab66ccb272e4606922bd92c03d3646b"
+      }
+    }
+  }
+}
