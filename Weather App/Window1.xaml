@@ -39,7 +39,7 @@
             </Grid.RowDefinitions>
 
             <!--Input Name-->
-            <TextBlock Text="Please Input Your Preffered name:" 
+            <TextBlock Text="Please Input Your Preffered Name:" 
                    Grid.Row="0"/>
 
             <TextBox x:Name="userNameInput"
@@ -63,7 +63,7 @@
                    Margin="0,0,0,40"/>
 
             <!--Input Location-->
-            <TextBlock Text="Please Input Your location:"
+            <TextBlock Text="Please Click The Button To Get Your Approximate Location:"
                    Grid.Row="1"/>
 
             <Button x:Name="userLocationInput"
@@ -71,7 +71,8 @@
                  Margin="0,5,0,0"
                  Height="20"
                  Background="Gray"
-                 Content="Click Here."/>
+                 Content="Click Here."
+                 Click="userLocationInput_Click"/>
 
 
 

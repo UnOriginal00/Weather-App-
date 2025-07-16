@@ -9,14 +9,13 @@ using System.Net.Http.Headers;
 namespace Weather_App
 {
     //AIzaSyC2wy16rPLNeCuaKcMXVKDxivMl353AAYI
-    public static class ApiHelper
+    public  class ApiHelper
     {
 
-        public static HttpClient ApiClient { get; set; } = new HttpClient();
+        public static HttpClient ApiClient { get; set; }
 
         public static void inizialiseClient () 
         {
-           
             ApiClient = new HttpClient();
             ApiClient.DefaultRequestHeaders.Accept.Clear();
             ApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));

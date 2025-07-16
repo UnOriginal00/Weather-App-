@@ -8,8 +8,11 @@ namespace Weather_App
 {
     public class LocationModel
     {
-        public string key { get; set; } = "AIzaSyC2wy16rPLNeCuaKcMXVKDxivMl353AAYI";
 
-
+            public string ip { get; set; }
+            public string latitude { get; set; }
+            public string longitude { get; set; }
+            public string isp { get; set; }
+   
     }
 }
