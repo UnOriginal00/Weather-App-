@@ -17,7 +17,7 @@ namespace Weather_App
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    /// AIzaSyC2wy16rPLNeCuaKcMXVKDxivMl353AAYI
+
     public partial class Window1 : Window
     {
 

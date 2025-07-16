@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -11,7 +12,7 @@ namespace Weather_App
 {
     public class GetLocationApi
     {
-        readonly string key = "AIzaSyC2wy16rPLNeCuaKcMXVKDxivMl353AAYI";
+        readonly string key = "0ab66ccb272e4606922bd92c03d3646b";
         readonly string url = "https://api.ipgeolocation.io/ipgeo?apiKey=0ab66ccb272e4606922bd92c03d3646b";
 
 
