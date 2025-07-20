@@ -27,7 +27,7 @@ namespace Weather_App
             ApiHelper.inizialiseClient();
         }
 
-        readonly GetLocationApi getLocationApi = new GetLocationApi();
+        readonly public GetLocationApi getLocationApi = new GetLocationApi();
 
         private void preventInteraction(UIElement uIElement)
         {
@@ -57,24 +57,34 @@ namespace Weather_App
 
         }
 
-        private void userLocationInputSave_Click(object sender, RoutedEventArgs e)
-        {
-
-            preventInteraction(userLocationInput);
-            userLocationInputSave.Content = "Saved!";
-            moveToMainWindow();
-
-        }
-
         public async void userLocationInput_Click(object sender, RoutedEventArgs e)
         {
 
             LocationModel locationModel = await getLocationApi.getLocation();
             Location.Latitude = locationModel.latitude;
             Location.Longitude = locationModel.longitude;
-            userLocationInput.Content = $"Lat: {locationModel.latitude}, Lng: {locationModel.longitude}";
+            userLocationInput.Content = "Location Saved!";
 
         }
+
+        private void userLocationInputSave_Click(object sender, RoutedEventArgs e)
+        {
+            if (Location.Latitude == null)
+            {
+                userLocationInput.Foreground = Brushes.Red;
+                userLocationInput.Content = "Click here before saving";
+
+            }
+            else 
+            {
+                preventInteraction(userLocationInput);
+                userLocationInputSave.Content = "Saved!";
+                moveToMainWindow();
+            }
+
+        }
+
+
 
         public void moveToMainWindow()
         {

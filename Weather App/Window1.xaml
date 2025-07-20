@@ -74,9 +74,6 @@
                  Content="Click Here."
                  Click="userLocationInput_Click"/>
 
-
-
-
             <Button x:Name="userLocationInputSave"
                 Grid.Row="1"
                 Content="Save"

@@ -66,21 +66,28 @@
                     </Style>
                     
                 </StackPanel.Resources>
-                
-                <TextBlock x:Name="tempretureDisplay"
-                       Text=" Current Tempreture:"/>
-                <TextBlock x:Name="humidityDisplay"
-                       Text=" Humidity:"/>
+
+                <TextBlock Text=" Current Tempreture:"/>
+                <TextBlock x:Name="tempretureDisplay"/>
+                <TextBlock Text=" Humidity:"/>
+                <TextBlock x:Name="humidityDisplay"/>
 
             </StackPanel>
 
 
-            
 
+            <StackPanel Grid.Row="1" >
+
+                <TextBlock Text=" Summary:"
+                           FontSize="30"/>
+
+                <TextBlock x:Name="summary"
+                           FontSize="20"/>
+
+            </StackPanel>
             <!--Bottom of Left Section-->
-            <TextBlock Grid.Row="1" 
-                       Text="Summary:"
-                       FontSize="30"/>
+
+
 
         </Grid>
 
